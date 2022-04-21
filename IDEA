@@ -1,0 +1,49 @@
+transaction
+	sourceAccount
+	sourceAccountInternalBool
+	targetAccount
+	targetAccountInternalBool
+	date
+	category
+	comment
+	value (always positive)
+
+account (never deleted but can be hidden)
+	name
+	comment
+	list of users owning the account
+
+budget
+	category
+	month
+	year
+	value
+
+	
+Database
+	How to manage the Transaction database ?
+		Store a new transaction into a file
+		Organize files per folder (per month/year ?)
+			year folder -> month
+			year files for < year - 2
+		Keep a folder summary file
+			Hash of all transaction files
+				If hash changed, recalculate summary
+				If many summary files, recalculate whole folder summary
+			Per account
+			include budget summary
+		Compact old months / years ?
+			keep always last 6 months as transaction files, compact the rest per year
+			if new file coming, integrate it
+		On startup
+			Synchronize / Update summaries first
+			Load summary files info into memory => lots of I/O ?
+		When executing
+			If folder change => new calculation and reload in memory ?
+	
+	Queries
+		Add a transaction
+		List transactions
+			for a given time period
+			on a specific account (source & target)
+			for all accounts
