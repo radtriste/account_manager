@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/java,maven,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,maven,visualstudiocode
 
+/database
+
 ### Java ###
 # Compiled class file
 *.class
