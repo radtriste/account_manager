@@ -2,10 +2,14 @@ package fr.tradisson.account.manager.database.internal.filesystem;
 
 import java.time.LocalDate;
 import java.util.Properties;
+import java.util.UUID;
+
+import javax.enterprise.context.ApplicationScoped;
 
 import fr.tradisson.account.manager.model.Transaction;
 
-public class TransactionStorageFS extends AbstractStorageDS<Transaction> implements StorageFS<Transaction> {
+@ApplicationScoped
+public class TransactionStorageFS extends AbstractStorageFS<Transaction> implements StorageFS<Transaction> {
 
   public TransactionStorageFS() {
     super("transactions");
@@ -50,6 +54,7 @@ public class TransactionStorageFS extends AbstractStorageDS<Transaction> impleme
     sb.append(data.getDate().getYear());
     sb.append(data.getDate().getMonthValue());
     sb.append(data.getDate().getDayOfMonth());
+    sb.append(UUID.randomUUID().toString().toLowerCase());
     return sb.toString();
   }
 }

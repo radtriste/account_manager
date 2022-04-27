@@ -16,6 +16,39 @@ There is NO:
 
 - user management
 
+## TODO
+
+### First impl
+
+- Read / Write transaction file(s)
+- Transaction file listener + Startup load transactions
+- CRUD transaction rest endpoint
+  
+- Read / Write account file(s)
+- Account file listener + Startup load accounts
+- CRUD account rest endpoint
+  
+- Read / Write category file(s)
+- Category file listener  + Startup load categories
+- CRUD category rest endpoint
+  
+- Create transaction summary files (per account, per category ?)
+- Transaction summary file listener + Startup load transaction summaries
+
+- List of transactions filters
+	- for a given time period
+	- on a specific account (source & target)
+	- for all accounts
+
+### Later
+
+- Organize transaction files per subfolders (month/year)
+- Setup budget storage (budgetline)
+  - Code
+  - Tests
+- Compact old months/years
+- Scheduled transactions
+
 ## Dev
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.

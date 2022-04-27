@@ -4,7 +4,9 @@ import java.nio.file.Path;
 
 public interface StorageFS<T> {
 
-  public void storeData(T data);
+  public void writeFile(T data);
 
-  public T readData(Path path);
+  public T readFile(Path path);
+  
+  public void clear();
 }

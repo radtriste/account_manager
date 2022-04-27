@@ -1,4 +1,4 @@
-package fr.tradisson.account.manager.database;
+package fr.tradisson.account.manager.database.internal.filesystem;
 
 public class StorageFSException extends RuntimeException {
 
